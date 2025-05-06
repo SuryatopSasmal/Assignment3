@@ -53,7 +53,10 @@ GitFlow in this assignment:
 </br>
 8.	Successfully merge both changes </br>
    <img src="https://github.com/user-attachments/assets/efbb817e-7ce5-4d23-a7f2-42cc46916a65"> </br>
+</br>
+in VSCode we have<b> Resolve in merge editor </b> bu clicking 
     <img src="https://github.com/user-attachments/assets/7a1a470c-26e9-4d1d-9d9f-8fd668688a11"> </br>
+we can see two page prompt, by clicking desire code - it will get resolved.
 <img src="https://github.com/user-attachments/assets/9f33a72f-295d-4ea8-a2a1-a31139c10be1"> </br>
 
 <p><b>With this i resolve the conflict</b></p>

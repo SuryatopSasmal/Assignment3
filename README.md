@@ -15,7 +15,7 @@ GitFlow in this assignment:
   <img src="https://github.com/user-attachments/assets/2217053e-606e-4b48-bbf9-11ba7f76fac0">
 
 </pre>
-![image](https://github.com/user-attachments/assets/e03908d0-2cc4-4ceb-b807-381d8062cf84)
+![image](https://github.com/user-attachments/assets/93fefb10-b53d-4ec6-aa58-1603261bcc97)
 </br>
 3.  Create two feature branches from main: </br>
   o	Branch A: "feature/update-styling" - Update styling or formatting </br>

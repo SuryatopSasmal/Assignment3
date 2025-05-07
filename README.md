@@ -62,6 +62,110 @@ we can see two page prompt, by clicking desire code - it will get resolved.
 
 <p><b>With this i resolve the conflict</b></p>
 
+# Assignment4: Git Hooks & Automation
+**Objective:** Learn to implement quality controls and automation in Git workflow.
+**Tasks:**
+Working on setting up quality controls and automation in a Git project using Husky, lint-staged, commitlint, and GitHub Actions.
+STEP_1:
+1. Initialize a project
+   <pre>
+      mkdir git-quality-control
+      cd git-quality-control
+      npm init -y
+      git init
+   </pre>
+2. Install required packages
+   <pre>
+       npm install husky lint-staged --save-dev
+   </pre>
+  
+3. Enable Husky hooks
+   <pre>
+      npx husky install
+   </pre>
+   Add this line to package.json under "scripts":
+   <pre>
+      "scripts": {
+  "prepare": "husky install"
+}
+   </pre>
+Then run:
+<pre>
+   npm run prepare
+</pre>
+here i learned to set up Repo with Husky and lint-staged
+STEP_2:
+1. Install Iinters
+   <pre>
+      npm install eslint prettier --save-dev
+   </pre>
+2. Initialize ESLint
+   <pre>
+      npx eslint --init
+   </pre>
+Create .prettierrc:
+<pre>
+   {
+  "semi": true,
+  "singleQuote": true
+}
+</pre>
+Configure lint-staged in package.json
+<pre>
+   "lint-staged": {
+  "*.js": [
+    "eslint --fix",
+    "prettier --write"
+  ]
+}
+</pre>
+STEP_3:
+1. Add pre-commit hook
+   <pre>
+      npx husky add .husky/pre-commit "npx lint-staged"
+   </pre>
+2. Install commitlint
+   <pre>
+      npm install --save-dev @commitlint/{config-conventional,cli}
+   </pre>
+Create commitlint.config.js:
+3. Add commit-msg hook
+<pre>
+   npx husky add .husky/commit-msg 'npx --no-install commitlint --edit $1'
+</pre>
+here i learned Huskey Hooks
+STEP_4:
+Test Commits with Issues
+-Try committing:
+-Bad code formatting
+-Linting errors
+-Invalid commit messages
+-You should see these are rejected before committing.
+STEP_5:
+Create .github/workflows/lint.yml:
 
+<pre>
+   name: Lint Check
 
+on: [push, pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+    - run: npm install
+    - run: npx eslint .
+</pre>
+//GitHub Actions CI for Linting
+
+Outcome:
+   Rejected commits
+   Successful commits
+   GitHub Action passing
+   -according to the GitHub Actions lint workflow
 

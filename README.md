@@ -163,9 +163,9 @@ jobs:
 </pre>
 //GitHub Actions CI for Linting
 
-Outcome:
-   Rejected commits
-   Successful commits
-   GitHub Action passing
+Outcome:</br>
+   Rejected commits</br>
+   Successful commits</br>
+   GitHub Action passing</br>
    -according to the GitHub Actions lint workflow
 
